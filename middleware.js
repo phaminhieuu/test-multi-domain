@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export const config = {
-  matcher: ["/((?!api|_next|fonts|images|icons|unity|[\\w-]+\\.\\w+).*)"],
+  matcher: ["/", "/([^/.]*)"],
 };
 
 export default function middleware(req) {
   const url = req.nextUrl;
-  const hostname = req.headers.get("host");
+  const hostname = req.headers.get("host") || 'app.test-multi-domain.vercel.app'
   const currentHost =
     process.env.NODE_ENV === "production"
       ? hostname?.replace(`.test-multi-domain.vercel.app`, "")

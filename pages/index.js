@@ -22,6 +22,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 onClick={changeRoute}>Move to Test multi domain</h1>
+        <h3>{process.env.NODE_ENV}</h3>
       </main>
     </div>
   );
