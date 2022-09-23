@@ -12,6 +12,8 @@ export default function middleware(req) {
       ? hostname.replace(`.test-multi-domain.vercel.app`, "")
       : hostname.replace(".localhost:3000", "");
 
+  console.log(currentHost)
+
   if (currentHost === "site") {
     url.pathname = `/site${url.pathname}`;
     return NextResponse.rewrite(url);
