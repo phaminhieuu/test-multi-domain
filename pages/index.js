@@ -8,8 +8,8 @@ export default function Home() {
 
   const changeRoute = () => {
     if (process.env.NODE_ENV === "production") {
-      router.push("https://app.test-multi-domain.vercel.app");
-    } else router.push("http://app.localhost:3000");
+      router.push("https://site.test-multi-domain.vercel.app");
+    } else router.push("http://site.localhost:3000");
   };
 
   return (
